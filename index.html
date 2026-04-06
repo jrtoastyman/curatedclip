@@ -118,16 +118,6 @@
       color: var(--burgundy);
     }
 
-    .btn-gold {
-      background: var(--gold);
-      color: #fff;
-      border-color: var(--gold);
-    }
-    .btn-gold:hover {
-      background: transparent;
-      color: var(--gold);
-    }
-
     .btn-outline {
       background: transparent;
       color: var(--navy);
@@ -196,14 +186,6 @@
       border-radius: var(--radius);
     }
     .nav-links .nav-cta:hover { background: var(--burgundy-light); color: #fff; }
-
-    .nav-links .nav-shop {
-      background: var(--gold);
-      color: #fff;
-      padding: 0.52rem 1.25rem;
-      border-radius: var(--radius);
-    }
-    .nav-links .nav-shop:hover { background: var(--gold-light); color: #fff; }
 
     /* Hamburger */
     .nav-toggle {
@@ -427,29 +409,7 @@
     .about { background: var(--navy); }
 
     .about-inner {
-      display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 4.5rem;
-      align-items: center;
-    }
-
-    .about-visuals {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .about-brand-bug {
-      width: 200px;
-      filter: brightness(0) invert(1);
-      opacity: 0.88;
-    }
-
-    .about-submark {
-      width: 160px;
-      filter: brightness(0) invert(1);
-      opacity: 0.55;
+      max-width: 720px;
     }
 
     .about-text .eyebrow   { color: var(--gold); }
@@ -728,11 +688,7 @@
     ══════════════════════════════════════════════════════════ */
     @media (max-width: 900px) {
       .products-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .about-inner   { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-visuals { flex-direction: row; justify-content: center; }
-      .about-brand-bug { width: 130px; }
-      .about-submark   { width: 110px; }
-      .contact-inner   { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
 
     @media (max-width: 720px) {
@@ -921,7 +877,6 @@
     </button>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="https://101552099347259732.square.site/" target="_blank" rel="noopener" class="nav-shop">Shop Online</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#events">Events</a></li>
       <li><a href="#find-us">Find&nbsp;Us</a></li>
@@ -950,9 +905,8 @@
 
     <div class="hero-shop-callout">
       <p class="hero-shop-text">
-        Our shop is open online! Browse all of our handcrafted pieces and have them shipped right to your door — <strong>no market required.</strong>
+        An online shop is <strong>coming soon!</strong> In the meantime, come find us at a market or reach out directly.
       </p>
-      <a href="https://101552099347259732.square.site/" target="_blank" rel="noopener" class="btn btn-gold">Shop Now →</a>
     </div>
 
     <div class="hero-ctas">
@@ -973,7 +927,7 @@
     </div>
     <h2 class="section-title">Handcrafted with Love</h2>
     <p class="section-body">
-      Each piece is made by hand with carefully chosen materials — warm brass hardware, rich tassels, and embroidered detail. No two are exactly alike.
+      Each piece is made by hand with carefully chosen, high quality materials. No two are exactly alike, by design.
     </p>
     <div class="products-grid">
 
@@ -1100,11 +1054,6 @@
 <section class="about" id="about">
   <div class="container">
     <div class="about-inner">
-
-      <div class="about-visuals reveal">
-        <img src="brand bug.png" alt="The Curated Clip charm illustration" class="about-brand-bug">
-        <img src="submark.png"   alt="TCC Est. 2026" class="about-submark">
-      </div>
 
       <div class="about-text reveal">
         <span class="eyebrow">The Person Behind the Needle</span>
@@ -1257,7 +1206,6 @@
     <img src="submark.png" alt="TCC" class="footer-submark">
     <nav>
       <ul class="footer-nav">
-        <li><a href="https://101552099347259732.square.site/" target="_blank" rel="noopener">Shop Online</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#find-us">Find&nbsp;Us</a></li>
@@ -1364,7 +1312,6 @@
     function prevImage() { current = (current - 1 + items.length) % items.length; showImage(); }
     function nextImage() { current = (current + 1) % items.length;                showImage(); }
 
-    /* Click on any grid item to open */
     grid.addEventListener('click', (e) => {
       const item  = e.target.closest('.gallery-item');
       if (!item) return;
@@ -1376,10 +1323,8 @@
     lbPrev.addEventListener('click',  prevImage);
     lbNext.addEventListener('click',  nextImage);
 
-    /* Click outside the image to close */
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
 
-    /* Keyboard navigation */
     document.addEventListener('keydown', (e) => {
       if (!lb.classList.contains('active')) return;
       if (e.key === 'Escape')     closeLightbox();
