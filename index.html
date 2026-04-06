@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Curated Clip | Handmade Bag Charms &amp; Accessories</title>
+  <meta name="description" content="The Curated Clip — handmade bag charms, keyrings, and accessories by Sara. Find us at craft fairs, antique markets, and in our online shop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── DESIGN TOKENS ──────────────────────────────────────── */
+    :root {
+      --cream:          #F2EDE4;
+      --cream-dark:     #EAE3D7;
+      --cream-mid:      #DDD6C8;
+      --navy:           #202347;
+      --navy-light:     #2E3368;
+      --burgundy:       #7B1F3A;
+      --burgundy-light: #9B3554;
+      --gold:           #B89A3B;
+      --gold-light:     #C8AD5A;
+      --sage:           #8C9D7E;
+
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans:  'Raleway', sans-serif;
+
+      --radius: 3px;
+      --shadow: 0 4px 24px rgba(32,35,71,0.10);
+      --transition: 0.22s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--cream);
+      color: var(--navy);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img  { max-width: 100%; height: auto; display: block; }
+    a    { color: inherit; text-decoration: none; }
+    ul   { list-style: none; }
+
+    /* ── SHARED TYPOGRAPHY ──────────────────────────────────── */
+    .eyebrow {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 0.65rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-body {
+      font-size: 0.97rem;
+      color: var(--navy);
+      opacity: 0.72;
+      max-width: 580px;
+      line-height: 1.75;
+    }
+
+    .gold-rule {
+      width: 44px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────────── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 5.5rem 0; }
+
+    /* ── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: var(--burgundy);
+      color: #fff;
+      border-color: var(--burgundy);
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-outline:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.55);
+    }
+    .btn-outline-light:hover {
+      background: #fff;
+      color: var(--navy);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       NAVIGATION
+    ══════════════════════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      inset-inline: 0;
+      top: 0;
+      z-index: 200;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(32,35,71,0.09);
+      transition: box-shadow var(--transition);
+    }
+    .nav.scrolled { box-shadow: 0 2px 18px rgba(32,35,71,0.09); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.85rem 2rem;
+    }
+
+    .nav-logo img { height: 52px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--burgundy); }
+
+    .nav-links .nav-cta {
+      background: var(--burgundy);
+      color: #fff;
+      padding: 0.52rem 1.25rem;
+      border-radius: var(--radius);
+    }
+    .nav-links .nav-cta:hover { background: var(--burgundy-light); color: #fff; }
+
+    .nav-links .nav-shop {
+      background: var(--gold);
+      color: #fff;
+      padding: 0.52rem 1.25rem;
+      border-radius: var(--radius);
+    }
+    .nav-links .nav-shop:hover { background: var(--gold-light); color: #fff; }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 84px;
+      background-color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('pattern.png');
+      background-repeat: repeat;
+      background-size: 280px auto;
+      opacity: 0.055;
+      z-index: 0;
+    }
+
+    /* Subtle gradient vignette over pattern */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 40%, rgba(242,237,228,0.55) 100%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      padding: 2rem;
+    }
+
+    .hero-logo {
+      width: min(520px, 90vw);
+      margin: 0 auto 2.25rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      color: var(--navy);
+      opacity: 0.75;
+      margin-bottom: 2rem;
+    }
+
+    /* Shop callout strip in hero */
+    .hero-shop-callout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 1.35rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-shop-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+    }
+
+    .hero-shop-text strong {
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       PRODUCTS BAND
+    ══════════════════════════════════════════════════════════ */
+    .products {
+      background: var(--navy);
+      padding: 4.5rem 0;
+    }
+
+    .products .eyebrow   { color: var(--gold); }
+    .products .section-title { color: #fff; text-align: center; margin-bottom: 0.5rem; }
+    .products .section-body  { color: rgba(255,255,255,0.65); margin: 0 auto 3rem; text-align: center; max-width: 540px; }
+
+    .products-eyebrow-wrap { text-align: center; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      text-align: center;
+      transition: transform var(--transition), background var(--transition);
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.095);
+    }
+
+    .product-icon {
+      width: 58px;
+      height: 58px;
+      background: rgba(184,154,59,0.18);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.4rem;
+    }
+
+    .product-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-card p {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.60);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       PATTERN STRIPE
+    ══════════════════════════════════════════════════════════ */
+    .pattern-stripe {
+      width: 100%;
+      height: 110px;
+      background-image: url('pattern.png');
+      background-repeat: repeat-x;
+      background-size: auto 110px;
+      opacity: 0.22;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       EVENTS
+    ══════════════════════════════════════════════════════════ */
+    .events { background: var(--cream-dark); }
+
+    .coming-soon-box {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 3rem 2rem;
+      border: 2px dashed rgba(32,35,71,0.18);
+      border-radius: var(--radius);
+      background: var(--cream);
+    }
+
+    .coming-soon-box .coming-soon-label {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      color: var(--burgundy);
+      letter-spacing: 0.04em;
+    }
+
+    .coming-soon-box .coming-soon-sub {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--navy);
+      opacity: 0.55;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       FIND US
+    ══════════════════════════════════════════════════════════ */
+    .find-us { background: var(--cream); }
+
+    .find-us .coming-soon-box {
+      background: var(--cream-dark);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════════════════════════ */
+    .about { background: var(--navy); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .about-visuals {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about-brand-bug {
+      width: 200px;
+      filter: brightness(0) invert(1);
+      opacity: 0.88;
+    }
+
+    .about-submark {
+      width: 160px;
+      filter: brightness(0) invert(1);
+      opacity: 0.55;
+    }
+
+    .about-text .eyebrow   { color: var(--gold); }
+    .about-text .section-title { color: #fff; }
+    .about-text .gold-rule { margin-top: 0.25rem; }
+
+    .about-text p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.70);
+      margin-bottom: 1rem;
+      max-width: 520px;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       BESPOKE
+    ══════════════════════════════════════════════════════════ */
+    .bespoke {
+      background: var(--cream-mid);
+    }
+
+    .bespoke-inner {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .bespoke-inner .eyebrow {
+      display: block;
+      text-align: center;
+    }
+
+    .bespoke-inner .section-title {
+      text-align: center;
+    }
+
+    .bespoke-inner .gold-rule {
+      margin: 0 auto 1.5rem;
+    }
+
+    .bespoke-inner .section-body {
+      margin: 0 auto 0.85rem;
+      text-align: center;
+      max-width: 580px;
+    }
+
+    .bespoke-inner .bespoke-body {
+      font-size: 0.95rem;
+      color: var(--navy);
+      opacity: 0.72;
+      margin: 0 auto 1.25rem;
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    .bespoke-cta {
+      margin-top: 2rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════════════════════ */
+    .contact { background: var(--cream-dark); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info p {
+      font-size: 0.95rem;
+      color: var(--navy);
+      opacity: 0.72;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .contact-row-label {
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.5;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-row-value {
+      font-size: 0.92rem;
+      color: var(--navy);
+    }
+
+    .contact-row-value a {
+      color: var(--burgundy);
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+    .contact-row-value a:hover { color: var(--burgundy-light); }
+
+    .social-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      border: 2px solid var(--navy);
+      border-radius: var(--radius);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: background var(--transition), color var(--transition);
+    }
+    .social-btn:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+    .social-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+    /* Form */
+    .form-field { margin-bottom: 1.2rem; }
+
+    .form-field label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--navy);
+      background: var(--cream);
+      border: 1px solid rgba(32,35,71,0.18);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      appearance: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 3px rgba(123,31,58,0.10);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--burgundy);
+      color: #fff;
+      border: 2px solid var(--burgundy);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+      margin-top: 0.25rem;
+    }
+    .form-submit:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════════ */
+    .footer {
+      background: var(--navy);
+      padding: 3.5rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-submark {
+      width: 76px;
+      margin: 0 auto 1.75rem;
+      filter: brightness(0) invert(1);
+      opacity: 0.60;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-nav a {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.48);
+      transition: color var(--transition);
+    }
+    .footer-nav a:hover { color: rgba(255,255,255,0.88); }
+
+    .footer-divider {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 1.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      transition: color var(--transition);
+    }
+    .footer-social a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.28);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .about-inner   { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-visuals { flex-direction: row; justify-content: center; }
+      .about-brand-bug { width: 130px; }
+      .about-submark   { width: 110px; }
+      .contact-inner   { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 720px) {
+      section { padding: 3.75rem 0; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid rgba(32,35,71,0.10);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        z-index: 100;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       GALLERY
+    ══════════════════════════════════════════════════════════ */
+    .gallery { background: var(--cream); }
+
+    /*
+     * ─── HOW TO ADD MORE PHOTOS ───────────────────────────────
+     * Copy any <figure class="gallery-item"> block inside
+     * #gallery-grid and change the src / data-src to your
+     * new filename. The grid reflows automatically.
+     * ─────────────────────────────────────────────────────────
+     */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      cursor: pointer;
+      aspect-ratio: 1 / 1;
+      background: var(--cream-dark);
+      margin: 0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(32,35,71,0);
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:hover .gallery-hover-overlay {
+      background: rgba(32,35,71,0.25);
+    }
+
+    .gallery-hover-icon {
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .gallery-item:hover .gallery-hover-icon {
+      opacity: 1;
+    }
+
+    /* ── Lightbox ──────────────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(10,10,22,0.93);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox-img {
+      max-width: min(88vw, 820px);
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 60px rgba(0,0,0,0.55);
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.75rem;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.65);
+      font-size: 2.2rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color var(--transition);
+      padding: 0.25rem;
+    }
+    .lightbox-close:hover { color: #fff; }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 1.3rem;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition);
+      line-height: 1;
+    }
+    .lightbox-prev:hover,
+    .lightbox-next:hover { background: rgba(255,255,255,0.22); }
+
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+
+    /* ── Scroll-reveal ─────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <img src="submark.png" alt="The Curated Clip">
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="https://101552099347259732.square.site/" target="_blank" rel="noopener" class="nav-shop">Shop Online</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#find-us">Find&nbsp;Us</a></li>
+      <li><a href="#bespoke">Bespoke</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <img
+      src="main logo.png"
+      alt="The Curated Clip — Boutique for Handmade Bag Charms &amp; Accessories"
+      class="hero-logo"
+    >
+    <p class="hero-tagline">
+      Lovingly handcrafted bag charms, keyrings &amp; accessories —<br>
+      made with care, one stitch at&nbsp;a&nbsp;time.
+    </p>
+
+    <div class="hero-shop-callout">
+      <p class="hero-shop-text">
+        Our shop is open online! Browse all of our handcrafted pieces and have them shipped right to your door — <strong>no market required.</strong>
+      </p>
+      <a href="https://101552099347259732.square.site/" target="_blank" rel="noopener" class="btn btn-gold">Shop Now →</a>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#events"  class="btn btn-primary">Upcoming Events</a>
+      <a href="#find-us" class="btn btn-outline">Where to Find&nbsp;Us</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     PRODUCTS OVERVIEW
+════════════════════════════════════════ -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="products-eyebrow-wrap">
+      <span class="eyebrow">What We Make</span>
+    </div>
+    <h2 class="section-title">Handcrafted with Love</h2>
+    <p class="section-body">
+      Each piece is made by hand with carefully chosen materials — warm brass hardware, rich tassels, and embroidered detail. No two are exactly alike.
+    </p>
+    <div class="products-grid">
+
+      <div class="product-card reveal">
+        <div class="product-icon">🪡</div>
+        <h3>Bag Charms</h3>
+        <p>Embroidered charms that clip right onto your favorite tote, handbag, or backpack. A little personality goes a long way.</p>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-icon">🔑</div>
+        <h3>Keyrings</h3>
+        <p>Functional and beautiful — our keyrings are sturdy, stylish, and make the perfect everyday accessory or thoughtful gift.</p>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-icon">✨</div>
+        <h3>Accessories &amp; More</h3>
+        <p>Small-batch accessories and seasonal pieces, always evolving. Come see what's new at our next event!</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     GALLERY
+════════════════════════════════════════ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <span class="eyebrow">The Work</span>
+    <h2 class="section-title">A Closer Look</h2>
+    <p class="section-body">A peek at some of our recent pieces — every one made by hand, right here in the home studio.</p>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HOW TO ADD A PHOTO: copy any <figure> block below,
+         paste it inside this div, and update src + data-src
+         to your new filename. The grid reflows automatically.
+    ═══════════════════════════════════════════════════════ -->
+    <div class="gallery-grid" id="gallery-grid">
+
+      <figure class="gallery-item reveal" data-src="PI-strawberry.png">
+        <img src="PI-strawberry.png" alt="Handmade product by The Curated Clip" loading="lazy">
+        <div class="gallery-hover-overlay"><span class="gallery-hover-icon">+</span></div>
+      </figure>
+
+      <figure class="gallery-item reveal" data-src="PI-moon.png">
+        <img src="PI-moon.png" alt="Handmade product by The Curated Clip" loading="lazy">
+        <div class="gallery-hover-overlay"><span class="gallery-hover-icon">+</span></div>
+      </figure>
+
+      <figure class="gallery-item reveal" data-src="PI-sardine.png">
+        <img src="PI-sardine.png" alt="Handmade product by The Curated Clip" loading="lazy">
+        <div class="gallery-hover-overlay"><span class="gallery-hover-icon">+</span></div>
+      </figure>
+
+      <figure class="gallery-item reveal" data-src="PI-lock.png">
+        <img src="PI-lock.png" alt="Handmade product by The Curated Clip" loading="lazy">
+        <div class="gallery-hover-overlay"><span class="gallery-hover-icon">+</span></div>
+      </figure>
+
+      <figure class="gallery-item reveal" data-src="PI-fdl.png">
+        <img src="PI-fdl.png" alt="Handmade product by The Curated Clip" loading="lazy">
+        <div class="gallery-hover-overlay"><span class="gallery-hover-icon">+</span></div>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     PATTERN STRIPE
+════════════════════════════════════════ -->
+<div class="pattern-stripe"></div>
+
+
+<!-- ════════════════════════════════════════
+     UPCOMING EVENTS
+════════════════════════════════════════ -->
+<section class="events" id="events">
+  <div class="container">
+    <span class="eyebrow">Get Your Charm in Person</span>
+    <h2 class="section-title">Upcoming Events</h2>
+    <p class="section-body">Come say hello! We'd love to meet you and help you find the perfect piece.</p>
+
+    <div class="coming-soon-box reveal">
+      <p class="coming-soon-label">Coming Soon!</p>
+      <p class="coming-soon-sub">Follow us on social media for announcements about upcoming markets and events near you.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     FIND US
+════════════════════════════════════════ -->
+<section class="find-us" id="find-us">
+  <div class="container">
+    <span class="eyebrow">Always in Stock</span>
+    <h2 class="section-title">Where to Find Us</h2>
+    <p class="section-body">
+      Can't make it to an event? Keep an eye out — we'll be announcing retail locations soon!
+    </p>
+
+    <div class="coming-soon-box reveal">
+      <p class="coming-soon-label">Coming Soon!</p>
+      <p class="coming-soon-sub">In the meantime, shop our full collection online through our Square storefront.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     PATTERN STRIPE
+════════════════════════════════════════ -->
+<div class="pattern-stripe"></div>
+
+
+<!-- ════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+
+      <div class="about-visuals reveal">
+        <img src="brand bug.png" alt="The Curated Clip charm illustration" class="about-brand-bug">
+        <img src="submark.png"   alt="TCC Est. 2026" class="about-submark">
+      </div>
+
+      <div class="about-text reveal">
+        <span class="eyebrow">The Person Behind the Needle</span>
+        <h2 class="section-title">Meet Sara</h2>
+        <div class="gold-rule"></div>
+        <p>
+          Hi there — I'm Sara, the maker and dreamer behind The Curated Clip. What started as a love of embroidery and a habit of hunting through antique shops has turned into something I'm incredibly proud of: a small business built entirely on handcrafted products made with heart.
+        </p>
+        <p>
+          Every bag charm, keyring, and accessory I make is made by hand, one at a time, in my home studio. I choose high quality materials I love and I put real care into every piece. No two are exactly alike, and that's kind of the point.
+        </p>
+        <p>
+          I started The Curated Clip because I believe everyday accessories should feel special. Whether you clip one onto a well-worn tote or give it as a gift, I hope each piece brings a little joy into your day.
+        </p>
+        <p>
+          Come find me at a market near you — I love meeting the people who carry my work out into the world.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     BESPOKE
+════════════════════════════════════════ -->
+<section class="bespoke" id="bespoke">
+  <div class="container">
+    <div class="bespoke-inner reveal">
+      <span class="eyebrow">Made Just for You</span>
+      <h2 class="section-title">Bespoke &amp; Custom Pieces</h2>
+      <div class="gold-rule"></div>
+      <p class="bespoke-body">
+        Don't see exactly what you're looking for? I'd love to make something just for you. Whether it's a specific color palette, a meaningful motif, a custom gift, or something else you have in mind — reach out and let's talk about it.
+      </p>
+      <p class="bespoke-body">
+        Custom orders are made with the same care and attention as everything else in the shop. Just drop me a message through the contact form below and tell me what you're envisioning.
+      </p>
+      <div class="bespoke-cta">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+
+      <!-- Left: info -->
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h2 class="section-title">Say Hello</h2>
+        <p>
+          Have a question about a product, a custom request, or just want to say hi? I'd love to hear from you. I'm a one-woman shop, so I'll get back to you as soon as I can!
+        </p>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <!-- envelope -->
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-value">
+              <a href="mailto:info@curatedclip.com">info@curatedclip.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon" style="background:var(--gold);">
+            <!-- pin -->
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-row-label">Based in</div>
+            <div class="contact-row-value">St. Louis, Missouri</div>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://www.instagram.com/curatedclipstl/" target="_blank" rel="noopener" class="social-btn">
+            <!-- instagram -->
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@curatedclipstl" target="_blank" rel="noopener" class="social-btn">
+            <!-- tiktok -->
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.22 8.22 0 004.81 1.53V6.77a4.85 4.85 0 01-1.04-.08z"/></svg>
+            TikTok
+          </a>
+          <a href="https://www.threads.com/@curatedclipstl" target="_blank" rel="noopener" class="social-btn">
+            <!-- threads -->
+            <svg viewBox="0 0 192 192"><path d="M141.537 88.988c-.73-.385-1.47-.754-2.22-1.106-1.301-26.597-15.963-41.79-40.336-41.948h-.37c-14.651 0-26.83 6.25-34.364 17.617l13.545 9.294c5.587-8.485 14.372-10.3 20.819-10.3h.25c8.054.054 14.135 2.39 18.073 6.94 2.875 3.283 4.8 7.817 5.737 13.493-7.154-1.217-14.894-1.59-23.156-1.12-23.29 1.344-38.267 14.995-37.354 33.952.467 9.643 5.267 17.956 13.566 23.368 7.024 4.624 16.063 6.891 25.473 6.409 12.43-.642 22.198-5.24 29.154-13.664 5.31-6.367 8.667-14.605 10.19-25.02 6.11 3.686 10.631 8.743 13.148 15.084 4.168 10.758 4.416 28.45-8.795 41.669-11.611 11.658-25.587 16.715-46.726 16.849-23.449-.135-41.19-7.702-52.764-22.499-10.74-13.805-16.254-33.677-16.499-59.063.245-25.385 5.76-45.258 16.499-59.062C75.086 26.57 92.826 19 116.274 18.866h.13c23.539.135 41.483 7.737 53.328 22.594 5.772 7.233 10.064 16.314 12.817 27.107l16.068-4.274c-3.283-12.488-8.607-23.157-15.953-31.968C168.297 14.845 147.105 5.932 119.591 5.779h-.13c-27.614.153-48.916 9.101-63.327 26.601-12.89 15.651-19.545 38.007-19.795 66.476v.132c.25 28.47 6.905 50.826 19.795 66.476 14.41 17.5 35.713 26.448 63.327 26.601 25.162-.136 43.085-6.989 57.764-22.064 17.017-17.277 16.523-39.049 10.928-52.447-3.976-10.23-12.386-18.737-26.616-30.566zM103.68 128.852c-11.69.636-23.85-4.58-24.48-15.684-.488-8.922 6.331-18.904 26.576-20.063a94.82 94.82 0 016.44-.233c5.852 0 11.31.571 16.237 1.684-1.846 23.036-13.008 33.653-24.773 34.296z"/></svg>
+            Threads
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form reveal">
+        <!--
+          FORM SETUP NOTE:
+          The form below uses Formspree (https://formspree.io) for handling submissions.
+          Replace "YOUR_FORM_ID" below with your Formspree form ID after signing up.
+          Alternatively, you can update the action to any backend endpoint of your choice.
+        -->
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          id="contact-form"
+        >
+          <div class="form-field">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Question about an upcoming event">
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Tell me what's on your mind…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+          <p id="form-status" style="margin-top:0.9rem;font-size:0.85rem;text-align:center;display:none;"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <img src="submark.png" alt="TCC" class="footer-submark">
+    <nav>
+      <ul class="footer-nav">
+        <li><a href="https://101552099347259732.square.site/" target="_blank" rel="noopener">Shop Online</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#find-us">Find&nbsp;Us</a></li>
+        <li><a href="#bespoke">Bespoke</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/curatedclipstl/"  target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@curatedclipstl"     target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.threads.com/@curatedclipstl"    target="_blank" rel="noopener">Threads</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">
+      &copy; 2026 The Curated Clip &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Handmade with &hearts;
+    </p>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════
+     LIGHTBOX OVERLAY
+════════════════════════════════════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image viewer">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-prev"  id="lightbox-prev"  aria-label="Previous image">&#8592;</button>
+  <img src="" alt="Product detail" class="lightbox-img" id="lightbox-img">
+  <button class="lightbox-next"  id="lightbox-next"  aria-label="Next image">&#8594;</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+  /* ── Sticky nav shadow ── */
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  /* ── Mobile nav toggle ── */
+  const toggle   = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  /* ── Scroll-reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── Gallery Lightbox ── */
+  (function () {
+    const grid    = document.getElementById('gallery-grid');
+    const lb      = document.getElementById('lightbox');
+    const lbImg   = document.getElementById('lightbox-img');
+    const lbClose = document.getElementById('lightbox-close');
+    const lbPrev  = document.getElementById('lightbox-prev');
+    const lbNext  = document.getElementById('lightbox-next');
+    const lbCount = document.getElementById('lightbox-counter');
+
+    let items   = [];
+    let current = 0;
+
+    function getItems() {
+      return Array.from(grid.querySelectorAll('.gallery-item'));
+    }
+
+    function showImage() {
+      lbImg.src           = items[current].dataset.src;
+      lbImg.alt           = items[current].querySelector('img').alt;
+      lbCount.textContent = (current + 1) + ' / ' + items.length;
+      lbPrev.style.visibility = items.length > 1 ? 'visible' : 'hidden';
+      lbNext.style.visibility = items.length > 1 ? 'visible' : 'hidden';
+    }
+
+    function openLightbox(index) {
+      items   = getItems();
+      current = index;
+      showImage();
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function prevImage() { current = (current - 1 + items.length) % items.length; showImage(); }
+    function nextImage() { current = (current + 1) % items.length;                showImage(); }
+
+    /* Click on any grid item to open */
+    grid.addEventListener('click', (e) => {
+      const item  = e.target.closest('.gallery-item');
+      if (!item) return;
+      const index = getItems().indexOf(item);
+      if (index >= 0) openLightbox(index);
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click',  prevImage);
+    lbNext.addEventListener('click',  nextImage);
+
+    /* Click outside the image to close */
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+
+    /* Keyboard navigation */
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    });
+  })();
+
+  /* ── Contact form AJAX (Formspree) ── */
+  const form   = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.style.display = 'block';
+    status.textContent   = 'Sending…';
+    status.style.color   = 'var(--navy)';
+
+    try {
+      const res = await fetch(form.action, {
+        method:  'POST',
+        body:    new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        status.textContent = '✓ Message sent! I\'ll be in touch soon.';
+        status.style.color = 'var(--sage)';
+        form.reset();
+      } else {
+        status.textContent = 'Oops — something went wrong. Please try again or email directly.';
+        status.style.color = 'var(--burgundy)';
+      }
+    } catch {
+      status.textContent = 'Network error. Please check your connection and try again.';
+      status.style.color = 'var(--burgundy)';
+    }
+  });
+</script>
+
+</body>
+</html>
