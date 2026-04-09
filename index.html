@@ -409,8 +409,22 @@
     .about { background: var(--navy); }
 
     .about-inner {
-      max-width: 720px;
+      max-width: 960px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 3rem;
     }
+
+    .about-photo {
+      flex: 0 0 auto;
+      width: 260px;
+      border-radius: 4px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text { flex: 1 1 0; }
 
     .about-text .eyebrow   { color: var(--gold); }
     .about-text .section-title { color: #fff; }
@@ -421,6 +435,18 @@
       color: rgba(255,255,255,0.70);
       margin-bottom: 1rem;
       max-width: 520px;
+    }
+
+    @media (max-width: 640px) {
+      .about-inner {
+        flex-direction: column;
+        gap: 1.75rem;
+      }
+      .about-photo {
+        width: 100%;
+        max-width: 380px;
+        align-self: center;
+      }
     }
 
     /* ══════════════════════════════════════════════════════════
@@ -1054,6 +1080,8 @@
 <section class="about" id="about">
   <div class="container">
     <div class="about-inner">
+
+      <img src="saraforsite.png" alt="Sara, the maker behind The Curated Clip" class="about-photo reveal">
 
       <div class="about-text reveal">
         <span class="eyebrow">The Person Behind the Needle</span>
