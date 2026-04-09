@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Curated Clip | Handmade Bag Charms &amp; Accessories</title>
-  <meta name="description" content="The Curated Clip — handmade bag charms, keyrings, and accessories by Sara. Find us at craft fairs, antique markets, and in our online shop.">
+  <meta name="description" content="The Curated Clip — handmade bag charms, keyrings, and accessories by Sara. Find us at craft fairs, antique markets, and local shops.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -262,32 +262,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Shop callout strip in hero */
-    .hero-shop-callout {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      background: var(--navy);
-      border-radius: var(--radius);
-      padding: 1.35rem 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-shop-text {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 0.97rem;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.5;
-    }
-
-    .hero-shop-text strong {
-      font-style: normal;
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-
     .hero-ctas {
       display: flex;
       gap: 1rem;
@@ -401,6 +375,70 @@
 
     .find-us .coming-soon-box {
       background: var(--cream-dark);
+    }
+
+    .location-card {
+      margin-top: 3rem;
+      background: var(--cream-dark);
+      border: 1px solid rgba(32,35,71,0.12);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      max-width: 580px;
+    }
+
+    .location-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(32,35,71,0.10);
+    }
+
+    .location-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .location-tagline {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+    }
+
+    .location-details { display: flex; flex-direction: column; gap: 0; }
+
+    .location-detail-row {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(32,35,71,0.07);
+    }
+    .location-detail-row:last-child { border-bottom: none; }
+
+    .location-detail-label {
+      flex: 0 0 80px;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.5;
+      padding-top: 0.18rem;
+    }
+
+    .location-detail-value {
+      font-size: 0.95rem;
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 560px) {
+      .location-card { padding: 2rem 1.5rem; }
+      .location-detail-row { flex-direction: column; gap: 0.35rem; }
+      .location-detail-label { flex: none; }
     }
 
     /* ══════════════════════════════════════════════════════════
@@ -904,8 +942,8 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#events">Events</a></li>
       <li><a href="#find-us">Find&nbsp;Us</a></li>
+      <li><a href="#events">Events</a></li>
       <li><a href="#bespoke">Bespoke</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -929,15 +967,9 @@
       made with care, one stitch at&nbsp;a&nbsp;time.
     </p>
 
-    <div class="hero-shop-callout">
-      <p class="hero-shop-text">
-        An online shop is <strong>coming soon!</strong> In the meantime, come find us at a market or reach out directly.
-      </p>
-    </div>
-
     <div class="hero-ctas">
-      <a href="#events"  class="btn btn-primary">Upcoming Events</a>
-      <a href="#find-us" class="btn btn-outline">Where to Find&nbsp;Us</a>
+      <a href="#find-us" class="btn btn-primary">Where to Find&nbsp;Us</a>
+      <a href="#events"  class="btn btn-outline">Upcoming Events</a>
     </div>
   </div>
 </section>
@@ -1033,6 +1065,25 @@
 
 
 <!-- ════════════════════════════════════════
+     FIND US
+════════════════════════════════════════ -->
+<section class="find-us" id="find-us">
+  <div class="container">
+    <span class="eyebrow">Always in Stock</span>
+    <h2 class="section-title">Where to Find Us</h2>
+    <p class="section-body">
+      Can't make it to an event? Keep an eye out — we hope to announce a retail location soon!
+    </p>
+
+    <div class="coming-soon-box reveal">
+      <p class="coming-soon-label">Coming Soon!</p>
+      <p class="coming-soon-sub">We're working on getting our pieces into a shop near you. Follow us on social media for the announcement!</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
      UPCOMING EVENTS
 ════════════════════════════════════════ -->
 <section class="events" id="events">
@@ -1044,25 +1095,6 @@
     <div class="coming-soon-box reveal">
       <p class="coming-soon-label">Coming Soon!</p>
       <p class="coming-soon-sub">Follow us on social media for announcements about upcoming markets and events near you.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════
-     FIND US
-════════════════════════════════════════ -->
-<section class="find-us" id="find-us">
-  <div class="container">
-    <span class="eyebrow">Always in Stock</span>
-    <h2 class="section-title">Where to Find Us</h2>
-    <p class="section-body">
-      Can't make it to an event? Keep an eye out — we'll be announcing retail locations soon!
-    </p>
-
-    <div class="coming-soon-box reveal">
-      <p class="coming-soon-label">Coming Soon!</p>
-      <p class="coming-soon-sub">In the meantime, shop our full collection online through our Square storefront.</p>
     </div>
   </div>
 </section>
@@ -1235,8 +1267,8 @@
     <nav>
       <ul class="footer-nav">
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#events">Events</a></li>
         <li><a href="#find-us">Find&nbsp;Us</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#bespoke">Bespoke</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
